@@ -1,101 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SkyLuxe Real Estate — property buying, selling, rentals and real estate guidance. Support Your Dream.">
-<meta name="theme-color" content="#101010">
-<title>SkyLuxe Real Estate | Support Your Dream</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#101010;--panel:#181818;--gold:#d6b36a;--gold2:#f0d99e;--text:#f7f4ed;--muted:#b8b5ae;--line:#34322d}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}.container{width:min(1160px,92%);margin:auto}.topbar{border-bottom:1px solid #292722;color:var(--muted);font-size:.83rem;padding:9px 0}.topbar .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.topbar a{color:var(--gold2)}header{position:sticky;top:0;z-index:10;background:#101010ed;backdrop-filter:blur(14px);border-bottom:1px solid #292722}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px}.mark{height:42px;width:42px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-family:'Playfair Display',serif;font-size:1.35rem;transform:rotate(45deg)}.mark span{transform:rotate(-45deg)}.brandname{font-family:'Playfair Display',serif;font-size:1.25rem;letter-spacing:.08em}.brandname small{display:block;font-family:'DM Sans',sans-serif;font-size:.59rem;color:var(--gold);letter-spacing:.25em}.links{display:flex;align-items:center;gap:26px;font-size:.9rem;color:#e4e0d7}.links a:hover{color:var(--gold)}.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#17140e;padding:12px 19px;border:1px solid var(--gold);font-weight:700;font-size:.88rem;transition:.2s}.btn:hover{background:var(--gold2);transform:translateY(-2px)}.btn.outline{background:transparent;color:var(--gold)}.hero{position:relative;overflow:hidden;min-height:620px;display:flex;align-items:center;background:linear-gradient(90deg,#101010 0%,#101010f2 37%,#1010107a 70%,#10101035 100%),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85') center/cover}.hero:after{content:"";position:absolute;inset:auto 0 0;height:120px;background:linear-gradient(transparent,var(--bg));pointer-events:none}.hero-content{position:relative;z-index:1;max-width:650px;padding:85px 0 110px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.22em;font-size:.75rem;font-weight:700}.hero h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.8rem,6vw,5.25rem);line-height:1.07;margin:19px 0}.hero h1 em{color:var(--gold2);font-style:normal}.hero p{color:#d2cec5;max-width:520px;font-size:1.06rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}.trustline{display:flex;gap:24px;flex-wrap:wrap;margin-top:44px;color:#e4dfd4;font-size:.85rem}.trustline span:before{content:'✦';color:var(--gold);margin-right:8px}.section{padding:88px 0}.section-head{max-width:650px;margin-bottom:35px}.section h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.1rem);line-height:1.15;font-weight:500;margin:10px 0 15px}.section-head p,.muted{color:var(--muted)}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.service{padding:28px;background:var(--panel);border:1px solid var(--line);min-height:210px}.service .num{color:var(--gold);font-family:'Playfair Display',serif;font-size:1.4rem}.service h3{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:500;margin:17px 0 8px}.service p{color:var(--muted);font-size:.92rem;margin:0}.feature{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:#151513}.feature-image{min-height:430px;background:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85') center/cover}.feature-copy{padding:55px 7vw 55px 0}.checks{padding:0;list-style:none;color:#d9d5cc}.checks li{margin:13px 0}.checks li:before{content:'✓';color:var(--gold);margin-right:12px}.properties{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.property{border:1px solid var(--line);background:var(--panel);overflow:hidden}.property img{width:100%;height:220px;object-fit:cover;display:block}.property-body{padding:20px}.tag{display:inline-block;color:var(--gold);border:1px solid #6b5934;padding:3px 9px;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}.property h3{font-family:'Playfair Display',serif;font-weight:500;font-size:1.25rem;margin:12px 0 5px}.property p{color:var(--muted);font-size:.9rem;margin:0}.note{font-size:.8rem;color:#928e84;margin-top:16px}.cta{background:linear-gradient(110deg,#211d14,#151515 65%);border:1px solid #51452d;padding:45px;display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{font-size:clamp(1.8rem,3vw,2.6rem);margin:0}.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px}.contact-card{background:var(--panel);border:1px solid var(--line);padding:28px}.contact-item{padding:14px 0;border-bottom:1px solid var(--line)}.contact-item:last-child{border-bottom:0}.contact-item small{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:.14em;font-size:.7rem}.contact-item strong{font-weight:500;overflow-wrap:anywhere}.form{display:grid;gap:14px}.form input,.form select,.form textarea{width:100%;background:#111;border:1px solid #403d35;color:var(--text);padding:14px;font:inherit;border-radius:0}.form textarea{min-height:120px;resize:vertical}.form input:focus,.form select:focus,.form textarea:focus{outline:1px solid var(--gold)}.form .btn{cursor:pointer}.form-hint{color:#a8a397;font-size:.78rem}footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.83rem}.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.float-wa{position:fixed;right:18px;bottom:18px;z-index:12;background:#1f9d59;color:white;border-radius:50px;padding:13px 18px;font-size:.85rem;font-weight:700;box-shadow:0 8px 30px #0008}
-/* SkyLuxe property assistant */
-.ai-launch{display:block!important;visibility:visible!important;opacity:1!important;position:fixed;left:18px;bottom:18px;z-index:9999;background:#d6b36a;color:#17140e;border:0;border-radius:50px;padding:13px 17px;font-weight:700;box-shadow:0 8px 30px #0008;cursor:pointer}
-.ai-panel{position:fixed;left:18px;bottom:76px;width:min(360px,calc(100vw - 36px));height:470px;max-height:70vh;z-index:21;background:#151513;border:1px solid #6b5934;box-shadow:0 18px 55px #000b;display:none;flex-direction:column}
-.ai-panel.open{display:flex}.ai-head{padding:15px 17px;background:#211d14;border-bottom:1px solid #51452d;display:flex;justify-content:space-between;align-items:center}.ai-head strong{font-family:'Playfair Display',serif;font-size:1.05rem}.ai-head small{display:block;color:#d6b36a;font-size:.75rem}.ai-close{background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer}.ai-messages{padding:14px;overflow:auto;flex:1;display:flex;flex-direction:column;gap:10px}.ai-msg{padding:10px 12px;border:1px solid #34322d;background:#1d1d1a;border-radius:10px;max-width:94%;font-size:.88rem;white-space:pre-wrap}.ai-msg.user{align-self:flex-end;background:#332b1a;border-color:#6b5934}.ai-quick{display:flex;gap:7px;flex-wrap:wrap;padding:0 12px 10px}.ai-quick button{background:transparent;border:1px solid #6b5934;color:#e8d4a2;padding:6px 8px;font-size:.76rem;cursor:pointer}.ai-inputrow{display:flex;padding:12px;border-top:1px solid #34322d;gap:7px}.ai-inputrow input{min-width:0;flex:1;background:#101010;border:1px solid #403d35;color:#fff;padding:10px}.ai-inputrow button{background:#d6b36a;border:0;padding:0 13px;font-weight:700;cursor:pointer}
-@media(max-width:560px){.ai-launch{left:10px;bottom:10px;padding:11px 13px}.ai-panel{left:10px;bottom:65px;width:calc(100vw - 20px)}}
-@media(max-width:850px){.links{gap:13px}.links a:not(.btn){display:none}.hero{min-height:560px}.services,.properties{grid-template-columns:1fr 1fr}.feature{grid-template-columns:1fr}.feature-image{min-height:300px}.feature-copy{padding:0 6% 45px}.contact-grid{grid-template-columns:1fr;gap:25px}}
-@media(max-width:560px){.topbar .container{font-size:.74rem}.nav{height:68px}.brandname{font-size:1rem}.brandname small{font-size:.5rem}.mark{height:34px;width:34px}.nav>.btn{padding:10px 12px;font-size:.78rem}.hero-content{padding:65px 0 95px}.hero h1{font-size:2.75rem}.section{padding:64px 0}.services,.properties{grid-template-columns:1fr}.cta{padding:28px;align-items:flex-start;flex-direction:column}.property img{height:230px}.float-wa{right:12px;bottom:12px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <title>SkyLuxe Real Estate | Support Your Dream</title>
+  <meta name="description" content="Discover residential, commercial and land opportunities with SkyLuxe Real Estate. Get in touch with our team.">
+
+  <style>
+    :root {
+      --gold: #d7b46a;
+      --black: #101010;
+      --dark: #191919;
+      --white: #f8f6f0;
+      --muted: #b8b4aa;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    button { cursor: pointer; }
+    .container { width: min(1120px, 90%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(16,16,16,.96);
+      border-bottom: 1px solid #35302a;
+    }
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo { font-size: 23px; font-weight: 800; letter-spacing: 1px; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a:hover { color: var(--gold); }
+    .btn {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #111;
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-weight: 700;
+      transition: .2s;
+    }
+    .btn:hover { background: transparent; color: var(--gold); }
+    .btn-outline { background: transparent; color: var(--gold); }
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(10,10,10,.96), rgba(10,10,10,.78), rgba(10,10,10,.4)),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    }
+    .hero-content { max-width: 720px; padding: 90px 0; }
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    h1 { font-size: clamp(38px, 6vw, 68px); line-height: 1.1; margin: 20px 0; }
+    h1 span, .gold { color: var(--gold); }
+    .hero p { max-width: 600px; color: #ddd7ca; font-size: 18px; margin-bottom: 28px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    section { padding: 78px 0; }
+    .section-heading { max-width: 680px; margin-bottom: 35px; }
+    .section-heading h2 { font-size: clamp(29px, 4vw, 42px); margin: 10px 0; }
+    .section-heading p { color: var(--muted); }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card {
+      border: 1px solid #35302a;
+      background: var(--dark);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .card img { width: 100%; height: 210px; object-fit: cover; display: block; }
+    .card-content { padding: 22px; }
+    .card h3 { font-size: 21px; margin-bottom: 8px; }
+    .card p { color: var(--muted); margin-bottom: 18px; }
+    .text-link { color: var(--gold); font-weight: bold; }
+
+    .about {
+      background: #171614;
+      border-top: 1px solid #29251f;
+      border-bottom: 1px solid #29251f;
+    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
+    .about-image { width: 100%; min-height: 330px; object-fit: cover; border-radius: 8px; }
+    .about h2 { font-size: clamp(30px, 4vw, 42px); margin: 12px 0; }
+    .about p { color: var(--muted); margin-bottom: 20px; }
+    .features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .feature { border: 1px solid #39332a; padding: 14px; border-radius: 5px; }
+    .feature strong { color: var(--gold); display: block; }
+
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; }
+    .contact-info p { color: var(--muted); margin: 12px 0 22px; }
+    .contact-detail { padding: 14px 0; border-bottom: 1px solid #333; overflow-wrap: anywhere; }
+    .contact-detail strong { display: block; color: var(--gold); }
+    form { display: grid; gap: 14px; }
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #474139;
+      border-radius: 4px;
+      background: #1a1a1a;
+      color: white;
+      outline: none;
+    }
+    input:focus, textarea:focus { border-color: var(--gold); }
+    textarea { min-height: 120px; resize: vertical; }
+    .form-status { color: var(--gold); min-height: 24px; overflow-wrap: anywhere; }
+
+    footer { padding: 26px 0; border-top: 1px solid #35302a; color: var(--muted); }
+    .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+    /* AI chatbot */
+    .ai-launch {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 30;
+      width: 62px;
+      height: 62px;
+      border: none;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #111;
+      font-size: 27px;
+      box-shadow: 0 5px 25px #0008;
+    }
+    .ai-panel {
+      display: none;
+      position: fixed;
+      right: 22px;
+      bottom: 96px;
+      z-index: 31;
+      width: min(380px, calc(100vw - 28px));
+      height: min(520px, calc(100dvh - 125px));
+      background: #171717;
+      border: 1px solid #655334;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px #0009;
+      flex-direction: column;
+    }
+    .ai-panel.open { display: flex; }
+    .ai-header {
+      background: #242019;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #4a4030;
+    }
+    .ai-header strong { color: var(--gold); display: block; }
+    .ai-header small { color: #c4bfb4; }
+    .ai-close { border: 0; background: transparent; color: white; font-size: 24px; }
+    .ai-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .ai-bubble {
+      max-width: 88%;
+      padding: 11px 13px;
+      border-radius: 10px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font-size: 14px;
+    }
+    .ai-bubble.bot { background: #2a2926; align-self: flex-start; }
+    .ai-bubble.user { background: #c9a75f; color: #111; align-self: flex-end; }
+    .ai-form {
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      border-top: 1px solid #39342b;
+    }
+    .ai-form input { min-width: 0; padding: 12px; }
+    .ai-form button { border: 0; background: var(--gold); color: #111; padding: 0 15px; border-radius: 4px; font-weight: bold; }
+    .ai-form button:disabled { opacity: .5; cursor: wait; }
+    .ai-note { padding: 0 12px 9px; color: #aaa; font-size: 11px; }
+
+    @media (max-width: 760px) {
+      .nav-links { gap: 12px; font-size: 13px; }
+      .nav-links .nav-contact { display: none; }
+      .cards, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero { min-height: 540px; }
+      section { padding: 58px 0; }
+      .about-image { min-height: 240px; }
+    }
+    @media (max-width: 430px) {
+      .logo { font-size: 18px; }
+      .nav-links { gap: 10px; }
+      .nav-links a { font-size: 12px; }
+      .ai-launch { width: 56px; height: 56px; right: 14px; bottom: 14px; }
+      .ai-panel { right: 14px; bottom: 80px; }
+    }
+  </style>
 </head>
+
 <body>
-<div class="topbar"><div class="container"><span>Thoughtful property guidance. Clear communication.</span><span><a href="tel:+919608934272">+91 96089 34272</a> &nbsp;·&nbsp; <a href="mailto:realestateskyluxe@gmail.com">Email us</a></span></div></div>
-<header><div class="container nav">
-<a class="brand" href="#home" aria-label="SkyLuxe Real Estate home"><div class="mark"><span>S</span></div><div class="brandname">SKYLUXE<small>REAL ESTATE</small></div></a>
-<nav class="links" aria-label="Main navigation"><a href="#services">Services</a><a href="#properties">Properties</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-<a class="btn" href="#contact">Find a Property ↗</a>
-</div></header>
-<main>
-<section class="hero" id="home"><div class="container"><div class="hero-content">
-<div class="eyebrow">A smarter way to find your place</div>
-<h1>Find a place<br>to call <em>your own.</em></h1>
-<p>From your first home to your next investment, SkyLuxe Real Estate helps you navigate property decisions with clarity, care and confidence.</p>
-<div class="actions"><a class="btn" href="#properties">Explore Properties&nbsp; ↗</a><a class="btn outline" href="#contact">Talk to Our Team</a></div>
-<div class="trustline"><span>Buying & selling</span><span>Rentals</span><span>Property guidance</span></div>
-</div></div></section>
-<section class="section" id="services"><div class="container">
-<div class="section-head"><div class="eyebrow">What we do</div><h2>Property decisions,<br>made more confidently.</h2><p>Practical support at every step—whether you're searching for a home, marketing a property or exploring your next opportunity.</p></div>
-<div class="services">
-<article class="service"><div class="num">01</div><h3>Buy a Property</h3><p>Shortlist homes, plots and commercial spaces around your needs and budget.</p></article>
-<article class="service"><div class="num">02</div><h3>Sell or Rent</h3><p>Connect with interested buyers and tenants, and get help coordinating the process.</p></article>
-<article class="service"><div class="num">03</div><h3>Property Improvement</h3><p>Discuss interior, carpentry and painting requirements for your space.</p></article>
-</div></div></section>
-<section class="feature" id="about"><div class="feature-image" role="img" aria-label="Modern home interior"></div><div class="feature-copy"><div class="eyebrow">The SkyLuxe approach</div><h2>More than a property.<br>A place for your next chapter.</h2><p class="muted">Real estate can feel complicated. Our goal is to make the process easier to understand, with responsive communication and guidance tailored to what matters to you.</p><ul class="checks"><li>Understand your requirements first</li><li>Discuss suitable property choices transparently</li><li>Stay connected throughout the process</li></ul><a class="btn" href="#contact">Start a Conversation ↗</a></div></section>
-<section class="section" id="properties"><div class="container"><div class="section-head"><div class="eyebrow">Explore possibilities</div><h2>A property for every ambition.</h2><p>Tell us what you're looking for. These categories are a starting point—availability and pricing are confirmed directly with our team.</p></div>
-<div class="properties">
-<article class="property"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Contemporary luxury home" loading="lazy"><div class="property-body"><span class="tag">Residential</span><h3>Homes & Villas</h3><p>Find a home that fits your lifestyle and plans.</p></div></article>
-<article class="property"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Open land plot" loading="lazy"><div class="property-body"><span class="tag">Land</span><h3>Residential Plots</h3><p>Explore land opportunities for your future build.</p></div></article>
-<article class="property"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Modern commercial workspace" loading="lazy"><div class="property-body"><span class="tag">Commercial</span><h3>Business Spaces</h3><p>Consider spaces for your next business move.</p></div></article>
-</div><p class="note">Illustrative images only. No specific listing, price, location, or availability is represented here.</p>
-</div></section>
-<section class="section" style="padding-top:0"><div class="container"><div class="cta"><div><div class="eyebrow">Your next move starts here</div><h2>Let's find the right property for you.</h2></div><a class="btn" href="#contact">Contact SkyLuxe ↗</a></div></div></section>
-<section class="section" id="contact"><div class="container"><div class="section-head"><div class="eyebrow">Get in touch</div><h2>Tell us what you're looking for.</h2><p>Share a few details and connect with SkyLuxe Real Estate directly.</p></div>
-<div class="contact-grid"><div class="contact-card">
-<div class="eyebrow">Contact details</div>
-<div class="contact-item"><small>Founder</small><strong>Anshu Sharma</strong></div>
-<div class="contact-item"><small>Co-founder</small><strong>Golu Sharma</strong></div>
-<div class="contact-item"><small>Phone / WhatsApp</small><strong><a href="tel:+919608934272">+91 96089 34272</a></strong></div>
-<div class="contact-item"><small>Email</small><strong><a href="mailto:realestateskyluxe@gmail.com">realestateskyluxe@gmail.com</a></strong></div>
-<div class="contact-item"><small>Brand promise</small><strong>Support Your Dream.</strong></div>
-</div>
-<form class="contact-card form" id="leadForm">
-<input id="name" name="name" placeholder="Your full name" required>
-<input id="phone" name="phone" type="tel" placeholder="Your phone number" required>
-<input id="email" name="email" type="email" placeholder="Your email address (optional)">
-<select id="interest" name="interest" required><option value="">I'm interested in…</option><option>Buying a property</option><option>Selling a property</option><option>Renting a property</option><option>Commercial property</option><option>Interior / property improvement</option></select>
-<textarea id="message" name="message" placeholder="Preferred location, budget or any details (optional)"></textarea>
-<input type="hidden" name="_subject" value="New SkyLuxe Real Estate Website Enquiry">
-<button class="btn" id="emailSubmit" type="submit">Send Enquiry by Email ↗</button>
-<div id="formStatus" class="form-hint" role="status">Enquiries are sent through the secure SkyLuxe email backend. WhatsApp is also available.</div>
-</form></div></div></section>
-</main>
-<footer><div class="container footer-inner"><span>© <span id="year"></span> SkyLuxe Real Estate. All rights reserved.</span><span>Support Your Dream.</span></div></footer>
-<a class="float-wa" href="https://wa.me/919608934272?text=Hello%20SkyLuxe%20Real%20Estate%2C%20I%27m%20interested%20in%20a%20property." target="_blank" rel="noopener">WhatsApp ↗</a>
-<script src="https://js.puter.com/v2/"></script>
-<script>
-document.getElementById('year').textContent=new Date().getFullYear();
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">SKY<span>LUXE</span></a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#properties">Properties</a>
+        <a href="#about">About</a>
+        <a class="nav-contact" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-const leadForm=document.getElementById('leadForm');
-leadForm.addEventListener('submit',async function(e){
- e.preventDefault(); const status=document.getElementById('formStatus'),btn=document.getElementById('emailSubmit');
- const data={name:document.getElementById('name').value.trim(),phone:document.getElementById('phone').value.trim(),email:document.getElementById('email')?.value.trim()||'',interest:document.getElementById('interest').value,message:document.getElementById('message').value.trim(),website:''};
- status.textContent='Sending enquiry securely…';btn.disabled=true;
- try { if(location.protocol==='file:'||location.protocol==='content:') throw new Error('Open the hosted HTTPS website. Direct email needs the deployed SkyLuxe backend.');
- const r=await fetch('/api/enquiry',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});const j=await r.json().catch(()=>({}));
- if(r.ok&&j.ok){status.textContent='Enquiry sent successfully to SkyLuxe Real Estate.';leadForm.reset();}else status.textContent=j.error||'Email backend is not available yet. Please use WhatsApp or call us.';
- } catch(err){status.textContent=err.message||'Could not reach the email server. Ensure the backend is deployed.';}finally{btn.disabled=false;}
-});
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Your property journey starts here</div>
+          <h1>Find a Place.<br>Build Your <span>Future.</span></h1>
+          <p>Discover property opportunities with SkyLuxe Real Estate. Tell us what you are looking for and let our team help you take the next step.</p>
+          <div class="actions">
+            <a class="btn" href="#properties">Explore Properties</a>
+            <a class="btn btn-outline" href="#contact">Talk to Our Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* Generative SkyLuxe assistant. Puter.js requires an HTTPS origin, not a local file. */
-const aiHistory=[{role:'system',content:'You are SkyLuxe Real Estate’s professional AI property consultant in India. Reply in the visitor’s language (Hindi/Hinglish or English). Help with buying, selling, renting, plots, homes, commercial spaces, interior/property improvement, general processes and document checklists. Ask one concise follow-up at a time about location, budget, type and timeline. Never invent current listings, availability, prices, RERA status, title status or guaranteed returns; say the team must confirm them. Contact: founder Golu Sharma, +91 96089 34272, realestateskyluxe@gmail.com.'}];
-function toggleAI(){aiPanel.classList.toggle('open');if(aiPanel.classList.contains('open')&&!aiMessages.dataset.started){aiMessages.dataset.started='1';addAI('bot','Namaste! I’m the SkyLuxe AI Property Assistant. 🏡 Ask me about buying, selling, renting, commercial property or property documents. Tell me your location and approximate budget to get started.');if(location.protocol==='file:'||location.protocol==='content:')addAI('bot','AI chat needs the website hosted on HTTPS. You opened this page as a local file.');}}
-function addAI(who,text){const el=document.createElement('div');el.className='ai-msg '+(who==='user'?'user':'');el.textContent=text;aiMessages.appendChild(el);aiMessages.scrollTop=aiMessages.scrollHeight;return el;}
-async function sendAI(text){const input=document.getElementById('aiText');text=(text||input.value).trim();if(!text)return;addAI('user',text);input.value='';const btn=document.getElementById('aiSend');btn.disabled=true;const pending=addAI('bot','Thinking…');aiHistory.push({role:'user',content:text});try{if(location.protocol==='file:'||location.protocol==='content:')throw new Error('Local-file origin unsupported. Open the hosted HTTPS website.');if(!window.puter||!puter.ai||typeof puter.ai.chat!=='function')throw new Error('AI service did not load. Check internet and reload.');const r=await puter.ai.chat(aiHistory.slice(0,1).concat(aiHistory.slice(-12)),{model:'gpt-4o-mini'});let a=typeof r==='string'?r:(r?.message?.content?(Array.isArray(r.message.content)?r.message.content.map(x=>x.text||'').join('\n'):r.message.content):String(r||'No reply generated.'));pending.textContent=a;aiHistory.push({role:'assistant',content:a});}catch(e){pending.textContent='AI connection issue: '+(e.message||'Please try again.')+' You can call +91 96089 34272 or email realestateskyluxe@gmail.com.';}finally{btn.disabled=false;}}
-document.getElementById('aiSend').addEventListener('click',()=>sendAI());
-document.getElementById('aiText').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();sendAI();}});
-document.querySelectorAll('[data-ai]').forEach(b=>b.addEventListener('click',()=>sendAI(b.dataset.ai)));
-</script>
-</body></html>
+    <section id="properties">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Explore opportunities</div>
+          <h2>Find the Right <span class="gold">Property</span></h2>
+          <p>Looking for a home, a commercial space, or land? Share your requirements with us so we can help you explore suitable options.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Modern residential home" loading="lazy">
+            <div class="card-content">
+              <h3>Residential Properties</h3>
+              <p>Explore options for your next home, based on your location and budget.</p>
+              <a class="text-link" href="#contact" data-interest="Residential property">Enquire now →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Commercial office building" loading="lazy">
+            <div class="card-content">
+              <h3>Commercial Spaces</h3>
+              <p>Discuss commercial property requirements for your business or investment.</p>
+              <a class="text-link" href="#contact" data-interest="Commercial property">Enquire now →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Open land and green landscape" loading="lazy">
+            <div class="card-content">
+              <h3>Land & Plots</h3>
+              <p>Tell us your preferred area, plot requirements, and planned budget.</p>
+              <a class="text-link" href="#contact" data-interest="Land or plot">Enquire now →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <img class="about-image" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80" alt="Elegant modern property interior" loading="lazy">
+        <div>
+          <div class="eyebrow">About SkyLuxe</div>
+          <h2>Your Dreams. <span class="gold">Our Commitment.</span></h2>
+          <p>SkyLuxe Real Estate helps people explore property opportunities with clear communication and a customer-first approach.</p>
+          <div class="features">
+            <div class="feature"><strong>Personal Support</strong><span>Discuss your requirements</span></div>
+            <div class="feature"><strong>Property Guidance</strong><span>Explore suitable options</span></div>
+            <div class="feature"><strong>Easy Enquiry</strong><span>Contact us online</span></div>
+            <div class="feature"><strong>AI Assistant</strong><span>Get instant basic guidance</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Let's connect</div>
+          <h2>Tell Us What You <span class="gold">Need</span></h2>
+          <p>Submit your details and our team can follow up regarding your property enquiry.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Contact SkyLuxe</h3>
+            <p>Share your requirements with us by email, phone, or WhatsApp.</p>
+            <div class="contact-detail">
+              <strong>Phone / WhatsApp</strong>
+              <a href="https://wa.me/9608934272" target="_blank" rel="noopener">+91 96089 34272</a>
+            </div>
+            <div class="contact-detail">
+              <strong>Email</strong>
+              <a href="mailto:realestateskyluxe@gmail.com">realestateskyluxe@gmail.com</a>
+            </div>
+          </div>
+
+          <form id="enquiryForm">
+            <input name="name" placeholder="Your full name" required maxlength="100">
+            <input name="phone" placeholder="Phone number" required maxlength="20">
+            <input name="email" type="email" placeholder="Email address" maxlength="150">
+            <input name="property" placeholder="Property type (home, land, commercial)" maxlength="120">
+            <textarea name="message" placeholder="Tell us your preferred location, budget and requirements" required maxlength="2000"></textarea>
+            <button class="btn" type="submit">Send Enquiry</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> SkyLuxe Real Estate</span>
+      <span>Support Your Dream</span>
+    </div>
+  </footer>
+
+  <!-- AI Assistant -->
+  <button class="ai-launch" id="aiLaunch" aria-label="Open SkyLuxe AI assistant" aria-expanded="false">✦</button>
+
+  <div class="ai-panel" id="aiPanel" role="dialog" aria-label="SkyLuxe AI Assistant">
+    <div class="ai-header">
+      <div>
+        <strong>SkyLuxe AI Assistant</strong>
+        <small>Ask about property enquiries</small>
+      </div>
+      <button class="ai-close" id="aiClose" aria-label="Close chatbot">×</button>
+    </div>
+
+    <div class="ai-messages" id="aiMessages" aria-live="polite">
+      <div class="ai-bubble bot">Welcome to SkyLuxe! 👋 I can help with residential properties, commercial spaces, land, and how to contact our team. What are you looking for?</div>
+    </div>
+
+    <form class="ai-form" id="aiForm">
+      <input id="aiText" placeholder="Type your question..." maxlength="1000" autocomplete="off" required>
+      <button id="aiSend" type="submit">Send</button>
+    </form>
+    <div class="ai-note">AI responses may need confirmation from our team.</div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Enquiry form
+    const enquiryForm = document.getElementById("enquiryForm");
+    const formStatus = document.getElementById("formStatus");
+
+    enquiryForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const button = enquiryForm.querySelector('button[type="submit"]');
+      button.disabled = true;
+      formStatus.textContent = "Sending your enquiry...";
+
+      const data = Object.fromEntries(new FormData(enquiryForm).entries());
+      data.message = [
+        data.property ? "Property type: " + data.property : "",
+        data.message
+      ].filter(Boolean).join("\n");
+
+      try {
+        const response = await fetch("/api/enquiry", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        if (!response.ok || result.ok === false) {
+          throw new Error(result.error || "Could not send enquiry. Please contact us on WhatsApp.");
+        }
+
+        formStatus.textContent = result.message || "Enquiry sent successfully to SkyLuxe!";
+        enquiryForm.reset();
+      } catch (error) {
+        formStatus.textContent = error.message || "Unable to send. Please try WhatsApp.";
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    // Fill property type when a property enquiry link is clicked
+    document.querySelectorAll("[data-interest]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        document.querySelector('input[name="property"]').value = link.dataset.interest;
+      });
+    });
+
+    // Chatbot panel
+    const aiPanel = document.getElementById("aiPanel");
+    const aiLaunch = document.getElementById("aiLaunch");
+    const aiClose = document.getElementById("aiClose");
+    const aiForm = document.getElementById("aiForm");
+    const aiText = document.getElementById("aiText");
+    const aiSend = document.getElementById("aiSend");
+    const aiMessages = document.getElementById("aiMessages");
+
+    // Keep the conversation in the browser; the secret API key stays on the server.
+    const aiHistory = [];
+
+    function toggleAI(open) {
+      const shouldOpen = typeof open === "boolean"
+        ? open
+        : !aiPanel.classList.contains("open");
+
+      aiPanel.classList.toggle("open", shouldOpen);
+      aiLaunch.setAttribute("aria-expanded", String(shouldOpen));
+
+      if (shouldOpen) aiText.focus();
+    }
+
+    aiLaunch.addEventListener("click", () => toggleAI());
+    aiClose.addEventListener("click", () => toggleAI(false));
+
+    function addAI(who, text) {
+      const bubble = document.createElement("div");
+      bubble.className = "ai-bubble " + (who === "user" ? "user" : "bot");
+      bubble.textContent = text;
+      aiMessages.appendChild(bubble);
+      aiMessages.scrollTop = aiMessages.scrollHeight;
+      return bubble;
+    }
+
+    aiForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const text = aiText.value.trim();
+      if (!text || aiSend.disabled) return;
+
+      // Retain up to four previous exchanges, then add the current question.
+      while (aiHistory.length > 8) aiHistory.splice(0, 2);
+
+      addAI("user", text);
+      aiText.value = "";
+      aiSend.disabled = true;
+
+      const loading = addAI("bot", "Thinking...");
+
+      aiHistory.push({ role: "user", text: text });
+
+      try {
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ messages: aiHistory })
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.ok || !result.reply) {
+          throw new Error(result.error || "The AI assistant is temporarily unavailable.");
+        }
+
+        loading.textContent = result.reply;
+        aiHistory.push({ role: "model", text: result.reply });
+
+        // Keep history at no more than 10 messages, preserving whole exchanges.
+        while (aiHistory.length > 10) aiHistory.splice(0, 2);
+      } catch (error) {
+        // Remove the failed question from history so a retry stays in sequence.
+        aiHistory.pop();
+        loading.textContent = error.message || "Connection failed. Please try again.";
+      } finally {
+        aiSend.disabled = false;
+        aiText.focus();
+        aiMessages.scrollTop = aiMessages.scrollHeight;
+      }
+    });
+  </script>
+</body>
+</html>
