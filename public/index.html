@@ -50,43 +50,98 @@
   aiForm.addEventListener('submit',async event=>{event.preventDefault();const text=aiText.value.trim();if(!text||aiSend.disabled)return;while(aiHistory.length>8)aiHistory.splice(0,2);addAI('user',text);aiText.value='';aiSend.disabled=true;const loading=addAI('bot','Thinking...');aiHistory.push({role:'user',text});try{const response=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:aiHistory})});let result={};try{result=await response.json()}catch{}if(!response.ok||!result.ok||!result.reply){let message=result.error||'The AI assistant is temporarily unavailable.';if(response.status===503)message='The AI service is busy right now. Please try again in a minute.';throw new Error(message)}loading.textContent=result.reply;aiHistory.push({role:'model',text:result.reply});while(aiHistory.length>10)aiHistory.splice(0,2)}catch(error){aiHistory.pop();loading.textContent=error.message||'Connection failed. Please try again.'}finally{aiSend.disabled=false;aiText.focus();aiMessages.scrollTop=aiMessages.scrollHeight}});
 </script>
 
-  <!-- SkyLuxe Floating WhatsApp Button -->
+  <!-- Movable SkyLuxe WhatsApp Button -->
 <a href="https://wa.me/919608932427?text=Hello%20SkyLuxe%20Real%20Estate%2C%20I%20am%20interested%20in%20a%20property."
-   class="whatsapp-float"
+   id="whatsapp-float"
+   aria-label="Contact SkyLuxe on WhatsApp"
    target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Contact SkyLuxe on WhatsApp">
-  <span class="whatsapp-icon">☏</span>
-  <span>WhatsApp</span>
+   rel="noopener noreferrer">
+  <span>☏</span>
 </a>
 
 <style>
-.whatsapp-float {
+#whatsapp-float {
   position: fixed;
-  left: 20px;
-  right: auto;
-  bottom: 20px;
-  z-index: 9999;
+  left: 18px;
+  bottom: 24px;
+  z-index: 9998;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 50px;
+  justify-content: center;
+  border-radius: 50%;
   background: #25D366;
   color: white;
-  font-weight: 700;
+  font-size: 25px;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 10px rgba(0,0,0,.18);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
 }
 
-.whatsapp-float:hover {
-  background: #1ebe5d;
-  color: white;
-}
-
-.whatsapp-icon {
-  font-size: 17px;
+#whatsapp-float:active {
+  cursor: grabbing;
 }
 </style>
+
+<script>
+(() => {
+  const btn = document.getElementById('whatsapp-float');
+  if (!btn || btn.dataset.movable) return;
+  btn.dataset.movable = 'true';
+
+  let dragging = false;
+  let moved = false;
+  let startX = 0, startY = 0;
+  let startLeft = 0, startTop = 0;
+
+  btn.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    moved = false;
+    startX = e.clientX;
+    startY = e.clientY;
+
+    const rect = btn.getBoundingClientRect();
+    startLeft = rect.left;
+    startTop = rect.top;
+
+    btn.style.left = startLeft + 'px';
+    btn.style.top = startTop + 'px';
+    btn.style.bottom = 'auto';
+    btn.style.right = 'auto';
+    btn.setPointerCapture(e.pointerId);
+  });
+
+  btn.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    if (Math.abs(dx) > 5 || Math.abs(dy) > 5) moved = true;
+
+    const x = Math.max(0, Math.min(innerWidth - btn.offsetWidth, startLeft + dx));
+    const y = Math.max(0, Math.min(innerHeight - btn.offsetHeight, startTop + dy));
+
+    btn.style.left = x + 'px';
+    btn.style.top = y + 'px';
+  });
+
+  btn.addEventListener('pointerup', () => {
+    dragging = false;
+    if (moved) {
+      btn.dataset.dragged = 'true';
+      setTimeout(() => delete btn.dataset.dragged, 300);
+    }
+  });
+
+  btn.addEventListener('click', (e) => {
+    if (btn.dataset.dragged) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  });
+})();
+</script>
 </body>
 </html>
